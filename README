@@ -1,0 +1,32 @@
+# Wear OS Stopwatch POC
+
+A simple Stopwatch app for Wear OS built with Kotlin and Jetpack Compose.  
+This project demonstrates a clean, minimal architecture for timer management using Kotlin coroutines and flows.
+
+---
+
+## Features
+
+- Start, stop, and reset stopwatch timer  
+- Timer state managed in ViewModel using Kotlin Coroutines and Flows  
+- Clean architecture with dedicated Use Cases for timer logic  
+- No repository layer — business logic encapsulated in Use Cases
+
+---
+
+## Architecture
+
+- **ViewModel**: Controls the timer state, toggling, and formatting elapsed time  
+- **Use Cases**:
+  - `GetTimerFlowUseCase`: Emits a `Flow<Long>` of elapsed time while the timer is running  
+  - `ResetTimerUseCase`: Handles resetting the timer and returns the reset state  
+  - `ToggleTimerUseCase`: Manages starting and stopping the timer based on current state  
+- No repository — Use Cases directly contain timer logic
+
+---
+
+## Usage
+
+1. Clone the repository  
+   ```bash
+   git clone https://github.com/DaveCDowdy/WearOsStopWatch.git
